@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LADER · Boletim Regulatório</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, serif; background: #f4f4f0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+  .card { background: #fff; max-width: 520px; width: 100%; border-top: 5px solid #1a3a5c; border-radius: 4px; padding: 48px; box-shadow: 0 2px 16px rgba(0,0,0,.08); }
+  .logo { font-size: 28px; font-weight: bold; color: #1a3a5c; letter-spacing: .14em; margin-bottom: 4px; }
+  .logo-sub { font-size: 11px; color: #718096; letter-spacing: .06em; margin-bottom: 28px; }
+  .divider { height: 1px; background: #e2e8f0; margin-bottom: 28px; }
+  h1 { font-size: 20px; color: #1a3a5c; margin-bottom: 10px; font-weight: normal; }
+  p { font-size: 14px; color: #4a5568; line-height: 1.7; margin-bottom: 24px; }
+  .temas { font-size: 12px; color: #718096; background: #f7f8fa; border-left: 3px solid #1a3a5c; padding: 10px 14px; margin-bottom: 28px; line-height: 1.7; }
+  label { display: block; font-size: 12px; color: #4a5568; margin-bottom: 6px; }
+  input { width: 100%; padding: 10px 14px; border: 1px solid #cbd5e0; border-radius: 3px; font-size: 14px; font-family: Georgia, serif; color: #2d3748; margin-bottom: 16px; }
+  input:focus { outline: none; border-color: #1a3a5c; }
+  button { width: 100%; padding: 12px; background: #1a3a5c; color: #fff; border: none; border-radius: 3px; font-size: 14px; font-family: Georgia, serif; cursor: pointer; }
+  button:hover { background: #14304f; }
+  .aviso { font-size: 11px; color: #a0aec0; margin-top: 14px; text-align: center; }
+  .sucesso { display: none; text-align: center; }
+  .sucesso-icone { font-size: 36px; margin-bottom: 12px; }
+  .sucesso-txt { font-size: 15px; color: #1a3a5c; margin-bottom: 8px; }
+  .sucesso-sub { font-size: 13px; color: #718096; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div id="formulario">
+    <div class="logo">LADER</div>
+    <div class="logo-sub">LIGA ACADÊMICA DE DIREITO ECONÔMICO E REGULATÓRIO · PUC-RIO</div>
+    <div class="divider"></div>
+    <h1>Boletim Regulatório Semanal</h1>
+    <p>Toda segunda-feira, as principais notícias regulatórias e legislativas do Brasil com análise jurídica.</p>
+    <div class="temas">
+      <strong>Temas cobertos:</strong><br>
+      Mercado de capitais · Energia · O&G · Telecomunicações · Data centers · Infraestrutura · Cripto · IA · Minerais críticos · Antitruste · Regulação financeira
+    </div>
+    <form id="form-inscricao">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" placeholder="seu@email.com" required>
+      <button type="submit">Inscrever-se</button>
+    </form>
+    <p class="aviso">Sem spam. Cancele a qualquer momento.</p>
+  </div>
+  <div id="sucesso" class="sucesso">
+    <div class="sucesso-icone">✓</div>
+    <div class="sucesso-txt">Inscrição confirmada!</div>
+    <div class="sucesso-sub">Você receberá o próximo boletim na segunda-feira.</div>
+  </div>
+</div>
+<script>
+  document.getElementById("form-inscricao").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("formulario").style.display = "none";
+    document.getElementById("sucesso").style.display = "block";
+  });
+</script>
+</body>
+</html>
